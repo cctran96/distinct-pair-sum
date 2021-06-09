@@ -1,5 +1,11 @@
 def distinct_pair_sum(arr, k)
-  # type your code in here
+  ans = []
+  for i in 1...arr.length 
+    if (arr[i] + arr[i-1] == k) && ans.none?{|pair| pair.include?(arr[i])}
+      ans.push([arr[i], arr[i-1]])
+    end
+  end
+  ans
 end
 
 if __FILE__ == $PROGRAM_NAME
